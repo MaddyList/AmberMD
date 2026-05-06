@@ -1,0 +1,29 @@
+cat <<EOF > prod.in
+&cntrl
+  imin=0,
+  nstlim=5000,
+  dt=0.002,
+
+  ntc=2,
+  ntf=2,
+
+  temp0=300.0,
+  ntt=3,
+  gamma_ln=1.0,
+
+  ntb=2,
+  ntp=1,
+  pres0=1.0,
+  taup=2.0,
+
+  cut=10.0,
+
+  iwrap=1,
+
+  ntpr=1000,
+  ntwx=1000,
+  ntwr=5000,
+
+  ntr=0
+/
+EOF

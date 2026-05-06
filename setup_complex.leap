@@ -1,0 +1,27 @@
+source leaprc.protein.ff14SB
+source leaprc.gaff
+source leaprc.water.tip3p
+
+# Load cleaned protein
+protein = loadpdb protein_clean.pdb
+
+# Load ligand
+loadamberparams ligand.frcmod
+ligand = loadmol2 ligand_ante.mol2
+
+# Combine into complex
+complex = combine {protein ligand}
+
+# Neutralize system (auto counter ions)
+addions complex Cl- 0
+
+# Solvate with TIP3P water box
+solvatebox complex TIP3PBOX 10.0
+
+# Save topology and coordinates
+saveamberparm complex complex.prmtop complex.inpcrd
+
+# Save PDB of solvated system
+savepdb complex complex_solvated.pdb
+
+quit

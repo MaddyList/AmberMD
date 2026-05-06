@@ -1,0 +1,12 @@
+cat > min.in << EOF
+&cntrl
+  imin=1,
+  maxcyc=5000,
+  ncyc=2500,
+  cut=10.0,
+  ntb=1,
+  ntr=1,
+  restraint_wt=5.0,
+  restraintmask=':1-163@CA'
+/
+EOF
